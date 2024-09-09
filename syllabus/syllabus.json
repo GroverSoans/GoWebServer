@@ -1,0 +1,9 @@
+{
+    "course": "Go Web Services",
+    "topics": [
+        "Introduction to Go",
+        "RESTful APIs",
+        "JSON and Data Handling",
+        "Go Frameworks"
+    ]
+}
