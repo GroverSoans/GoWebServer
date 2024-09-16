@@ -1,9 +1,19 @@
+
 {
     "course": "Go Web Services",
     "topics": [
         "Introduction to Go",
-        "RESTful APIs",
-        "JSON and Data Handling",
-        "Go Frameworks"
+        "Setting Up a Go Development Environment",
+        "Basic Syntax and Go Language Fundamentals",
+        "RESTful APIs with Go",
+        "Routing and URL Handling",
+        "Working with JSON and Data Handling",
+        "Using HTTP Methods (GET, POST, PUT, DELETE)",
+        "Error Handling and Middleware",
+        "Authentication and Authorization",
+        "Go Frameworks: Gin and Echo",
+        "Testing Web Services in Go",
+        "Deploying Go Web Applications",
+        "Advanced Go Features: Goroutines and Channels"
     ]
 }

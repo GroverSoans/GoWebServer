@@ -21,8 +21,6 @@ func SyllabusHandler(w http.ResponseWriter, r *http.Request) {
     switch r.Method {
     case http.MethodGet:
         serveSyllabus(w)
-    case http.MethodDelete:
-        DeleteStub(w)
     default:
         http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
     }
@@ -35,11 +33,6 @@ func serveSyllabus(w http.ResponseWriter) {
         http.Error(w, "Error parsing syllabus", http.StatusInternalServerError)
         return
     }
-}
-
-// Stubbed Delete
-func DeleteStub(w http.ResponseWriter) {
-    w.Write([]byte("deleted - stubbed"))
 }
 
 // Stubbed Create and Update
