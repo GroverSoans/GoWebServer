@@ -1,19 +1,28 @@
 package help
 
 import (
-	"net/http"
-	"encoding/json"
+    "net/http"
 )
 
-func Help(w http.ResponseWriter, r *http.Request){
-	helpInfo := map[string]string{
-        "hello-world":       "Returns plain text: 'Hello World - GWS'",
-        "hello-world-html":  "Returns HTML: 'Hello World — GWS'",
-        "hello-world-json":  "Returns JSON: {'message': 'Hello World - GWS'}",
-        "syllabus/create":   "Stubbed response: 'create - stubbed'",
-        "syllabus/update":   "Stubbed response: 'update - stubbed'",
-        "syllabus/delete":   "Stubbed response: 'delete - stubbed'",
-    }
-	w.WriteHeader(http.StatusOK)
-    json.NewEncoder(w).Encode(helpInfo)
+func Help(w http.ResponseWriter, r *http.Request) {
+    baseUrl := r.Host
+	
+	// Create an HTML response
+    htmlResponse := `
+    <html>
+    <body>
+        <h1>Available Endpoints</h1>
+        <ul>
+            <li><a href="http://` + baseUrl + `/hello-world">Hello World</a></li>
+            <li><a href="http://` + baseUrl + `/hello-world-html">Hello World - HTML</a></li>
+            <li><a href="http://` + baseUrl + `/hello-world-json">Hello World - JSON</a></li>
+            <li><a href="http://` + baseUrl + `/syllabus">Get Syllabus</a></li>
+            <li><a href="http://` + baseUrl + `/syllabus/create">Create Syllabus</a></li>
+            <li><a href="http://` + baseUrl + `/syllabus/update">Update Syllabus</a></li>
+            <li><a href="http://` + baseUrl + `/syllabus/delete">Delete Syllabus</a></li>
+        </ul>
+    </body>
+    </html>`
+    
+    w.Write([]byte(htmlResponse))
 }
