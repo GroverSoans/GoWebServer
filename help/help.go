@@ -12,6 +12,7 @@ func Help(w http.ResponseWriter, r *http.Request){
         "hello-world-json":  "Returns JSON: {'message': 'Hello World - GWS'}",
         "syllabus/create":   "Stubbed response: 'create - stubbed'",
         "syllabus/update":   "Stubbed response: 'update - stubbed'",
+        "syllabus/delete":   "Stubbed response: 'delete - stubbed'",
     }
 	w.WriteHeader(http.StatusOK)
     json.NewEncoder(w).Encode(helpInfo)
