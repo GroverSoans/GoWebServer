@@ -66,13 +66,13 @@ func SyllabusHandler(w http.ResponseWriter, r *http.Request) {
 
 // Stubbed Create and Update
 func CreateStub(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("Syllabus created"))
+    w.Write([]byte("Syllabus created-stubbed"))
 }
 
 func UpdateStub(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("Syllabus updated"))
+    w.Write([]byte("Syllabus updated-stubbed"))
 }
 
 func DeleteStub(w http.ResponseWriter, r *http.Request){
-    w.Write([]byte("Syllabus deleted"))
+    w.Write([]byte("Syllabus deleted-stubbed"))
 }
