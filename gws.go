@@ -7,6 +7,7 @@ import (
 	"github.com/GroverSoans/GoWebServer/hello"         
     "github.com/GroverSoans/GoWebServer/syllabus" 
 	"github.com/GroverSoans/GoWebServer/help"
+	"github.com/GroverSoans/GoWebServer/dice"
 )
 
 func printHelp() {
@@ -49,6 +50,9 @@ func main() {
 	http.HandleFunc("/syllabus/delete", syllabus.DeleteStub)
 
 	http.HandleFunc("/help", help.Help)
+
+	//Roll dice Functionality
+	http.HandleFunc("/api/rollDice", dice.DiceRoll)
 
 	fmt.Println("Server running at http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
