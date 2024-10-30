@@ -4,6 +4,7 @@ import (
 	"os"
 	"fmt"
 	"net/http"
+	"github.com/gorilla/handlers"
 	"github.com/GroverSoans/GoWebServer/hello"         
     "github.com/GroverSoans/GoWebServer/syllabus" 
 	"github.com/GroverSoans/GoWebServer/help"
@@ -37,6 +38,8 @@ func main() {
         printHelp()
         return
     }
+
+	corsObj := handlers.AllowedOrigins([]string{"*"})
 	//Routing
 	http.HandleFunc("/hello-world", hello.HelloWorld)
 	http.HandleFunc("/hello-world-html", hello.HelloWorldHTML)
@@ -55,6 +58,6 @@ func main() {
 	http.HandleFunc("/api/rollDice", dice.DiceRoll)
 
 	fmt.Println("Server running at http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", handlers.CORS(corsObj)(http.DefaultServeMux))
 }
 
